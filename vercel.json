@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/health", "destination": "/api/index.py?__route=/health" },
+    { "source": "/models", "destination": "/api/index.py?__route=/models" },
+    { "source": "/upload", "destination": "/api/index.py?__route=/upload" },
+    { "source": "/validate", "destination": "/api/index.py?__route=/validate" },
+    { "source": "/analyze", "destination": "/api/index.py?__route=/analyze" },
+    { "source": "/files/(.*)", "destination": "/api/index.py?__route=/files/$1" },
+    { "source": "/api/(.*)", "destination": "/api/index.py?__route=/api/$1" }
+  ]
+}

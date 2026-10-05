@@ -1,0 +1,29 @@
+# Training configuration for Remote Sensing Captioning (Florence-2-base)
+# Designed for CPU experimentation and portable to Google Colab / Kaggle GPU
+
+model:
+  name: "florence-community/Florence-2-base"
+  task_prefix: "<DETAILED_CAPTION>"
+  max_length: 96
+  use_lora: true
+  lora:
+    r: 8
+    lora_alpha: 16
+    lora_dropout: 0.05
+    target_modules: ["q_proj", "v_proj"]
+
+data:
+  train_manifest: "data/annotations/caption_train.json"
+  val_manifest: "data/annotations/caption_val.json"
+  image_root: "data/samples/captioning"
+  image_size: [384, 384]
+
+training:
+  device: "auto"              # "auto" -> cuda if available else cpu
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  epochs: 3
+  learning_rate: 1.0e-5
+  weight_decay: 0.01
+  save_steps: 100
+  output_dir: "models/checkpoints/florence-2-caption-finetuned"

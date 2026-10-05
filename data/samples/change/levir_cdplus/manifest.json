@@ -1,0 +1,30 @@
+[
+  {
+    "t1": "pair00_t1.png",
+    "t2": "pair00_t2.png",
+    "mask": "pair00_mask.png",
+    "source_path": null,
+    "changed_fraction": 0.12342357635498047
+  },
+  {
+    "t1": "pair01_t1.png",
+    "t2": "pair01_t2.png",
+    "mask": "pair01_mask.png",
+    "source_path": null,
+    "changed_fraction": 0.1200723648071289
+  },
+  {
+    "t1": "pair02_t1.png",
+    "t2": "pair02_t2.png",
+    "mask": "pair02_mask.png",
+    "source_path": null,
+    "changed_fraction": 0.06225013732910156
+  },
+  {
+    "t1": "pair03_t1.png",
+    "t2": "pair03_t2.png",
+    "mask": "pair03_mask.png",
+    "source_path": null,
+    "changed_fraction": 0.0
+  }
+]

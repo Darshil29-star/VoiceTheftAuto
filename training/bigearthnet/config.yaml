@@ -1,0 +1,32 @@
+# Training configuration for BigEarthNet.txt Vision-Language Training
+# Dataset: BIFOLD-BigEarthNetv2-0/BigEarthNet.txt (Hugging Face)
+# Supported architectures: Florence-2-base, SmolVLM-256M
+
+model:
+  name: "florence-community/Florence-2-base"
+  task_type: "vlm_instruction_tuning"
+  max_length: 128
+  use_lora: true
+  lora:
+    r: 8
+    lora_alpha: 16
+    lora_dropout: 0.05
+    target_modules: ["q_proj", "v_proj"]
+
+data:
+  dataset_name: "BIFOLD-BigEarthNetv2-0/BigEarthNet.txt"
+  train_manifest: "data/annotations/bigearthnet_train.json"
+  val_manifest: "data/annotations/bigearthnet_val.json"
+  image_root: "data/samples/bigearthnet"
+  image_size: [224, 224]
+
+training:
+  device: "auto"                 # "auto" -> cuda if available else cpu
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  epochs: 3
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  save_steps: 50
+  output_dir: "models/checkpoints/florence-2-bigearthnet"

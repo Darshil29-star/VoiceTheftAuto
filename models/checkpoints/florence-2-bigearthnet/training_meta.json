@@ -1,0 +1,30 @@
+{
+  "dataset": "BIFOLD-BigEarthNetv2-0/BigEarthNet.txt",
+  "model_architecture": "lightweight",
+  "epochs": 3,
+  "batch_size": 4,
+  "learning_rate": 2e-05,
+  "device": "cpu",
+  "train_samples": 80,
+  "val_samples": 20,
+  "final_train_loss": 10.3895,
+  "final_val_loss": 10.3794,
+  "loss_history": [
+    {
+      "epoch": 1,
+      "train_loss": 10.3835,
+      "val_loss": 10.3857
+    },
+    {
+      "epoch": 2,
+      "train_loss": 10.3938,
+      "val_loss": 10.3805
+    },
+    {
+      "epoch": 3,
+      "train_loss": 10.3895,
+      "val_loss": 10.3794
+    }
+  ],
+  "trained_at": "2026-09-30T19:27:03Z"
+}
